@@ -15,18 +15,19 @@ angular.module('demo').controller('DemoController', function($scope) {
     $scope.$watch('departureItem', function(value) {
         if (value) {
             $scope.departurePrice = value.price; 
-            $scope.calculation($scope.arrivalPrice, $scope.departurePrice); 
         }
     });
 
     $scope.$watch('arrivalItem', function(value) {
         if (value) {
             $scope.arrivalPrice = value.price; 
-            $scope.calculation($scope.arrivalPrice, $scope.departurePrice); 
         }
     });
 
     $scope.calculation = function(arrivalPrice, departurePrice) {
-        return arrivalPrice;
+        if(arrivalPrice == null) { arrivalPrice = 0; }
+        if(departurePrice == null) { departurePrice = 0; }
+        
+        return arrivalPrice + departurePrice;
     }
 });
