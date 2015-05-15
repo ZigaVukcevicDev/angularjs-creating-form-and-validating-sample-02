@@ -25,9 +25,9 @@ angular.module('demo').controller('DemoController', function($scope) {
     });
 
     $scope.calculation = function(arrivalPrice, departurePrice) {
-        if(arrivalPrice == null) { arrivalPrice = 0; }
-        if(departurePrice == null) { departurePrice = 0; }
-        
+        if (arrivalPrice == null) { arrivalPrice = 0; }
+        if (departurePrice == null) { departurePrice = 0; }
+
         return arrivalPrice + departurePrice;
     }
 });

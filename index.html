@@ -19,12 +19,12 @@
                 <p ng-show="sampleForm.departureItem.$error.required && sampleForm.departureItem.$touched">To polje je obvezno!</p> 
                 <p>Kraj prihoda <select name="arrivalItem" ng-options="arrivalItem.name for arrivalItem in airportsTo" class="form-control" ng-model="arrivalItem" ng-required="true"></select></p>
                 <p ng-show="sampleForm.arrivalItem.$error.required && sampleForm.arrivalItem.$touched">To polje je obvezno!</p> 
-
                 <p>Ime in priimek <input type="text" class="form-control" name="nameSurname" ng-model="nameSurname" /></p>
                 <p>E-poštni naslov <input type="email" class="form-control" name="emailAddress" ng-model="emailAddress" ng-required="true" /></p>
                 <p ng-show="sampleForm.emailAddress.$error.required && sampleForm.emailAddress.$dirty">To polje je obvezno!</p>
+                <p ng-show="!sampleForm.emailAddress.$valid && sampleForm.emailAddress.$dirty">Email ni v pravi obliki!</p>
                 <p>Telefon <input type="text" class="form-control" name="phone" ng-model="phone" /></p>
-
+    
                 <p>Vaši leti bodo stali: {{ calculation(arrivalPrice, departurePrice) }}</p>
 
                 <button class="btn btn-primary" ng-disabled="sampleForm.$invalid">Pošlji</button>
